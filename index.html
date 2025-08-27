@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiquititas - SBT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="#inicio" class="logo">CHIQUITITAS</a>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#detalhes">Detalhes</a></li>
+                        <li><a href="#personagens">Personagens</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container">
+                <h1>Onde a inocência e a amizade criam um lar.</h1>
+                <p>A história das crianças que vivem no Orfanato Raio de Luz.</p>
+                <a href="#detalhes" class="cta-button">Ver Detalhes</a>
+            </div>
+        </section>
+
+        <section class="section-content" id="detalhes">
+            <div class="container detalhes-content">
+                <img src="chiqui.jpg" alt="Elenco da novela Chiquititas">
+                <div class="detalhes-text">
+                    <h2>Detalhes da Novela</h2>
+                    <p>Chiquititas (2013) é uma novela brasileira do SBT, baseada na versão original argentina. A trama segue a jornada de um grupo de crianças que, por diversos motivos, acabam vivendo no Orfanato Raio de Luz, comandado pela meiga e dedicada Carolina "Carol" Correia.</p>
+                    <p>Ao lado da diretora, as crianças aprendem a lidar com as dificuldades, como a malvada diretora do orfanato, e descobrem que a verdadeira família é aquela construída com laços de carinho, amizade e solidariedade. A novela é um hino à esperança, com músicas e danças que aquecem o coração.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-content highlight-section" id="personagens">
+            <div class="container">
+                <h2>Conheça os Personagens</h2>
+                <div class="character-grid">
+                    <div class="character-card">
+                        <img src="Mili.webp" alt="Personagem Mili">
+                        <h3>Mili</h3>
+                        <p>A chiquitita mais sensível e sonhadora, com um grande coração.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="Pata.webp" alt="Personagem Pata">
+                        <h3>Pata</h3>
+                        <p>A rebelde e protetora, que aprende a confiar na amizade.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="cris.jpg" alt="Personagem Cris">
+                        <h3>Cris</h3>
+                        <p>A mais vaidosa e meiga, que se transforma ao longo da história.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="mosca.webp" alt="Personagem Mosca">
+                        <h3>Mosca</h3>
+                        <p>O mais esperto e extrovertido, sempre com um plano para ajudar.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="vivi.jpg" alt="Personagem Vivi">
+                        <h3>Vivi</h3>
+                        <p>A insegura e talentosa, que encontra sua voz na dança.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="ana.jpg" alt="Personagem Ana">
+                        <h3>Ana</h3>
+                        <p>A mais nova e doce, que ilumina o orfanato com sua alegria.</p>
+                    </div>
+                    <div class="character-card">
+                        <img src="bia.webp" alt="Personagem Bia">
+                        <h3>Bia</h3>
+                        <p>A chiquitita mais sapeca e agitada, sempre pronta para brincar.</p>
+                    </div>
+                     <div class="character-card">
+                        <img src="tati.jpg" alt="Personagem Tati">
+                        <h3>Tati</h3>
+                        <p>A irmã de Pata, sonhadora e com um carinho especial pelos amigos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-content" id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Chiquititas Brasil. Todos os direitos ao G.</p>
+        </div>
+    </footer>
+    
+    <div class="accessibility-sidebar">
+        <button id="decrease-font" title="Diminuir Fonte">A-</button>
+        <button id="increase-font" title="Aumentar Fonte">A+</button>
+        <button id="theme-toggle" title="Alternar Tema">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
