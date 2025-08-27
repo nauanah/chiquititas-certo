@@ -1,33 +1,24 @@
-/* Variáveis CSS com a nova paleta de cores */
+/* Variáveis CSS para o tema claro */
 :root {
-    /* Tema Claro */
-    --primary-color: #d4b815;
-    --secondary-color: #ff8c00;
-    --accent-color: #dc3545;
-    --background-color: #6aaaee;
-    --text-color: #212529;
+    --primary-color: #ff69b4; /* Rosa */
+    --secondary-color: #8a2be2; /* Azul-violeta */
+    --background-color: #fce4ec; /* Rosa claro */
+    --text-color: #333;
     --card-background: #ffffff;
-    --border-color: #3b6ea0;
-    --highlight-background: #6aaaee;
-    --header-gradient: linear-gradient(90deg, #065fbe 0%, #17a2b8 100%);
-    --hero-gradient: linear-gradient(rgba(0,123,255,0.7), rgba(0,123,255,0.7));
+    --highlight-background: #f0f0f0;
 }
 
-/* NOVO TEMA ESCURO */
+/* Tema escuro */
 body.dark-theme {
-    --primary-color: #FFD700; /* Dourado */
-    --secondary-color: #DC143C; /* Carmesim */
-    --accent-color: #17a2b8; /* Ciano-azulado */
-    --background-color: #12122b; /* Azul Escuro Quase Preto */
+    --primary-color: #f7a2d8; /* Rosa claro para contraste */
+    --secondary-color: #c091f3;
+    --background-color: #1e1e2f;
     --text-color: #f0f0f0;
-    --card-background: #1e1e40;
-    --border-color: #3f3f6e;
-    --highlight-background: #2a2a50;
-    --header-gradient: linear-gradient(90deg, #1e1e40 0%, #2a2a50 100%);
-    --hero-gradient: linear-gradient(rgba(20,20,50,0.8), rgba(20,20,50,0.8));
+    --card-background: #2a2a44;
+    --highlight-background: #3a3a5a;
 }
 
-/* Estilos Gerais */
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +30,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, font-size 0.3s ease;
     font-size: 16px;
 }
 
@@ -50,49 +41,107 @@ body {
     padding: 20px 0;
 }
 
-/* Cabeçalho */
+/* Cabeçalho e navegação */
 header {
-    background: var(--header-gradient);
-    color: #fff;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
+    padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-header .logo {
-    height: 60px;
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-header nav ul {
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links .logo {
+    font-family: 'Luckiest Guy', cursive;
+    color: #ecc02c;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-right: 30px;
+    padding: 5px 10px;
+}
+
+.nav-links ul {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #e28e0f;
+.nav-links a {
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-family: 'Luckiest Guy', cursive;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: var(--accent-color);
+.nav-links a:hover {
+    color: var(--secondary-color);
 }
 
-/* Seção Hero (Início) */
+/* Nova barra de acessibilidade no canto direito */
+.accessibility-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 10px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.accessibility-sidebar button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.accessibility-sidebar button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Icones de tema */
+.accessibility-sidebar .light-icon,
+.accessibility-sidebar .dark-icon {
+    font-size: 1.2em;
+}
+
+body.dark-theme .light-icon { display: none; }
+body:not(.dark-theme) .dark-icon { display: none; }
+
+/* Seção Hero */
 .hero {
-    background: var(--hero-gradient), url('https://s2.glbimg.com/eBwR9J7K3k0PqP0R4z2KjV6_5gE=/e.glbimg.com/og/ed/f/original/2012/07/20/carrossel_sbt.jpg') no-repeat center center/cover;
-    color: #f5f1f1;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://tvpop.com.br/wp-content/uploads/2021/04/Chiquititas-SBT-foto-oficial.jpg') no-repeat center center/cover;
+    color: #e26ba2;
     text-align: center;
     padding: 100px 0;
     min-height: 500px;
@@ -105,32 +154,31 @@ header nav ul li a:hover {
     font-family: 'Luckiest Guy', cursive;
     font-size: 3.5em;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.8);
 }
 
 .hero p {
     font-size: 1.3em;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .cta-button {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     color: #fff;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
     font-size: 1.1em;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #cd5c5c;
+    background-color: #8a2be2;
     transform: translateY(-3px);
 }
 
-/* Seções de Conteúdo */
+/* Seções de conteúdo */
 .section-content {
     padding: 60px 0;
 }
@@ -141,15 +189,13 @@ header nav ul li a:hover {
     font-size: 2.8em;
     margin-bottom: 40px;
     color: var(--primary-color);
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.15);
 }
 
 .highlight-section {
     background-color: var(--highlight-background);
 }
 
-/* Layout de Resumo da Novela */
-.resumo-content {
+.detalhes-content {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -157,31 +203,31 @@ header nav ul li a:hover {
     margin: 0 auto;
 }
 
-.resumo-content img {
+.detalhes-content img {
     width: 50%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.resumo-text {
+.detalhes-text {
     flex: 1;
 }
 
-.resumo-text h2 {
+.detalhes-text h2 {
     text-align: left;
 }
 
-/* Cards de Personagens */
+/* Cards de personagens */
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     text-align: center;
 }
 
 .character-card {
     background-color: var(--card-background);
-    border: 1px solid var(--border-color);
+    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -195,7 +241,7 @@ header nav ul li a:hover {
 
 .character-card img {
     width: 100%;
-    max-height: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -207,7 +253,7 @@ header nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Formulário de Contato */
+/* Formulário de contato */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -219,7 +265,7 @@ header nav ul li a:hover {
 
 .form-group label {
     display: block;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 8px;
     color: var(--secondary-color);
 }
@@ -228,7 +274,7 @@ header nav ul li a:hover {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit;
     font-size: 1em;
@@ -241,86 +287,54 @@ header nav ul li a:hover {
     background-color: var(--secondary-color);
 }
 
-.contact-form .cta-button:hover {
-    background-color: var(--accent-color);
-}
-
 /* Footer */
 footer {
-    background: var(--header-gradient);
+    background-color: var(--primary-color);
     color: #fff;
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
 }
 
-/* Nova barra de acessibilidade no topo */
-.top-accessibility-bar {
-    display: flex;
-    justify-content: flex-end; /* Alinha os botões à direita */
-    align-items: center;
-    background-color: var(--card-background);
-    padding: 10px 20px;
-    gap: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.top-accessibility-bar button {
-    background-color: transparent;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: 1em;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.top-accessibility-bar button:hover {
-    background-color: var(--highlight-background);
-}
-
-.top-accessibility-bar .dark-icon,
-.top-accessibility-bar .light-icon {
-    font-size: 1.2em;
-}
-
-/* Esconde ícone de tema conforme o tema atual */
-body.dark-theme .light-icon { display: none; }
-body:not(.dark-theme) .dark-icon { display: none; }
-
-/* Responsividade básica */
+/* Responsividade */
 @media (max-width: 768px) {
-    header .container {
+    .main-nav {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
-    header nav ul {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
         margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 10px;
     }
-    header nav ul li {
-        margin: 0 10px 10px 10px;
+    .accessibility-sidebar {
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 20px;
+        padding: 0;
+        transform: none;
     }
     .hero h1 {
         font-size: 2.2em;
     }
-    .section-content h2 {
-        font-size: 2em;
-    }
-    .resumo-content {
+    .detalhes-content {
         flex-direction: column;
+        text-align: center;
     }
-    .resumo-content img, .resumo-text {
+    .detalhes-content img, .detalhes-text {
         width: 100%;
-        text-align: center;
     }
-    .resumo-text h2 {
+    .detalhes-text h2 {
         text-align: center;
-    }
-    .character-grid {
-        grid-template-columns: 1fr;
     }
 }
